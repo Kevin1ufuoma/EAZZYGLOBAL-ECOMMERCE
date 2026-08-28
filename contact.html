@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicons -->
+    <link href="img/logo.jpg" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+    <title>EazzyGlobal</title>
+    <link rel="stylesheet" href="http://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <!--css link-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <section id="header">
+        <!-- Log Link Anchor -->
+        <a href="index.html"><img src="img/logo.jpg" width="90px" height="70px" class="logo" alt="Cara Brand Logo"></a>
+    
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+    
+                <!-- Cart Link (Updated link location to match CSS targets) -->
+                <li><a id="lg-bag" href="cart.html"><i class="fas fa-shopping-basket"></i></a></li>
+    
+                <!-- Theme Toggle Button -->
+                <li>
+                    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 18px;"
+                        title="Toggle Dark/Light Mode">
+                        <i id="theme-icon" class="fas fa-moon"></i>
+                    </button>
+                </li>
+    
+                <!-- Mobile Close Button Wrapper (Now enclosed safely inside an li tag) -->
+                <li class="mobile-only-item">
+                    <a href="#" id="close" aria-label="Close navigation menu"><i class="fas fa-times"></i></a>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Mobile Screen Top Interaction Layer -->
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-shopping-basket"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    
+    <section id="page-header" class="contact-header">
+        <h2>Do Keep in Touch</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+    </section>
+
+   
+    <section id="contact-details" class="section-p1">
+        <div class="details">
+            <span>GET IN TOUCH</span>
+            <h2>Visit Our Page or Contact Us Today</h2>
+            <h3>ONLINE</h3>
+            <ul style="padding: 0; margin: 0;">
+                <li>
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>medical road Ikeja, Lagos</p>
+                </li>
+                
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <p><a href="mailto:EazzyGlobal@gmail.com" style="text-decoration: none; color: inherit;">EazzyGlobal@gmail.com</a></p>
+                </li>
+                
+                <li>
+                    <i class="fas fa-phone-alt"></i>
+                    <p><a href="tel:+2349015259800" style="text-decoration: none; color: inherit;">+234 901-525-9800</a></p>
+                </li>
+                
+                <li>
+                    <i class="fas fa-clock"></i>
+                    <p>Monday to Saturday: 8:00am - 6:00pm</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.788867156578!2d3.306269769823875!3d6.673062406674691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b96c2953293e1%3A0x7de267196be2baf9!2sAdeniyi%20Olisa%20Cl%2C%20Ifako-Ijaiye%20101232%2C%20Ojokoro%2C%20Lagos!5e0!3m2!1sen!2sng!4v1689560239431!5m2!1sen!2sng"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" title="EazzyGlobal Corporate Headquarters Office Map Location"></iframe>
+        </div>
+    </section>
+
+    
+    <section id="form-details">
+        <form id="contactForm" action="/api/contact/message" method="POST" onsubmit="return false;">
+            <span>LEAVE A MESSAGE</span>
+            <h2>We love to hear from you!</h2>
+            
+            <div id="contact-form-response" style="font-size: 13px; font-weight: 600; margin-bottom: 15px; display: none;"></div>
+            
+            <input type="text" id="contactName" placeholder="Your Name" required aria-label="Your Name">
+            <input type="email" id="contactEmail" placeholder="Your Email" required aria-label="Your Email">
+            <input type="text" id="contactSubject" placeholder="Subject" required aria-label="Message Subject">
+            <textarea id="contactMessage" cols="30" rows="10" placeholder="Your MESSAGE" required aria-label="Message Body"></textarea>
+            
+            <button type="submit" class="normal">Submit</button>
+        </form>
+        
+        <div class="people">
+            <div>
+                <!-- Folder path optimized to use clean, web-safe name formats -->
+                <img src="img/team/passport2.jpg" alt="Sandro Ho Profile Picture">
+                <p><span>Sandro Ho</span> Senior Marketing Manager <br> Phone: +222 44 555 <br> Email: sandro@eazzyglobal.com</p>
+            </div>
+            <div>
+                <img src="img/team/passport1.jpg" alt="Jhon Doe Profile Picture">
+                <p><span>Jhon Doe</span> Software Engineer <br> Phone: +2222 444 555 <br> Email: jhon@eazzyglobal.com</p>
+            </div>
+            <div>
+                <img src="img/team/passport3.jpg" alt="Join EazzyGlobal Team Placeholder Card">
+                <p><span>Careers</span> Open Position <br> Phone: +222 33 3333 <br> Email: hr@eazzyglobal.com</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Our Newsletter</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offer.</span></p>
+    
+            <div id="newsletter-response" style="font-size: 13px; font-weight: 600; margin-top: 8px; display: none;"></div>
+        </div>
+        <form id="frm-newsletter-intake" class="form" action="/api/newsletter/subscribe" method="POST"
+            onsubmit="return false;">
+            <input type="email" id="txt-newsletter-email" placeholder="Your email address" required
+                aria-label="Email address for subscription">
+            <button id="btn-newsletter-submit" class="normal" type="submit">Sign Up</button>
+        </form>
+    </section>
+
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.jpg" height="80px" width="100px" alt="Cara Branding Footer Logo">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, fuga., Lagos
+            </p>
+            <p><strong>Phone: </strong>Lorem ipsum dolor sit amet.</p>
+            <p><strong>Hours: </strong>08:00 - 18:00, Mon - Sat</p>
+    
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit Facebook profile"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit Instagram profile"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit Twitter profile"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit Youtube channel"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">T&C</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+    
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <a href="https://play.google.com" target="_blank" rel="noopener"><img src="img/store1.png" height="80px"
+                        width="150px" alt="Download on Google Play Store"></a>
+                <a href="https://apps.apple.com" target="_blank" rel="noopener"><img src="img/store2.png" height="80px"
+                        width="150px" alt="Download on Apple App Store"></a>
+            </div>
+            <p>Secured payment Gateways</p>
+            <img src="img/pay.png" height="70px" width="150px" alt="Supported Payment Options">
+        </div>
+    
+        <div class="copyright">
+            <p>ⓒ <span id="copyright-year">2026</span>, EazzyGlobal - E Commerce Site</p>
+        </div>
+    </footer>
+
+
+    <script src="https://jquery.com"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
