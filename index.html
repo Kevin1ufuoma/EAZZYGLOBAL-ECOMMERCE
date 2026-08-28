@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Favicons -->
+        <link href="img/logo.jpg" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+        <title>EazzyGlobal</title>
+        <link rel="stylesheet" href="http://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+        <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+        <!--css link-->
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+        <section id="header">
+            <!-- Log Link Anchor -->
+            <a href="index.html"><img src="img/logo.jpg" width="90px" height="70px" class="logo" alt="Cara Brand Logo"></a>
+            
+            <div>
+                <ul id="navbar">
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    
+                    <!-- Cart Link (Updated link location to match CSS targets) -->
+                    <li><a id="lg-bag" href="cart.html"><i class="fas fa-shopping-basket"></i></a></li>
+                    
+                    <!-- Theme Toggle Button -->
+                    <li>
+                        <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 18px;" title="Toggle Dark/Light Mode">
+                            <i id="theme-icon" class="fas fa-moon"></i>
+                        </button>
+                    </li>
+
+                    <!-- Mobile Close Button Wrapper (Now enclosed safely inside an li tag) -->
+                    <li class="mobile-only-item">
+                        <a href="#" id="close" aria-label="Close navigation menu"><i class="fas fa-times"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Screen Top Interaction Layer -->
+            <div id="mobile">
+                <a href="cart.html"><i class="fas fa-shopping-basket"></i></a>
+                <!-- Pure HTML text burger icon - 100% reliable on GitHub live servers -->
+                <button type="button" id="bar"
+                    style="background: none; border: none; color: #088178; font-size: 24px; cursor: pointer; margin-left: 15px; padding: 0;">
+                    ☰
+                </button>
+            </div>
+        </section>
+
+
+        <section id="hero">
+            <div class="container">
+                <h2>Super Deals</h2>
+                <h1>On all Products</h1>
+                <p>Save More with Coupons & up to 70% off!</p>
+                <a href="shop.html" class="hero-shop-link">
+                    <button type="button" title="Browse our full store collection">Shop Now</button>
+                </a>
+            </div>
+        </section>
+
+
+        <div class="brands">
+            <!-- Centered structural container matching the exact layout width of your hero section -->
+            <div class="container" style="width: 100%; max-width: 1200px;">
+        
+                <!-- Inline style forcing wrapper to span 100% of the centered box width -->
+                <div class="wrapper flexitem"
+                    style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+        
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/brands/logo/ga.jpg" alt="Armani Logo" height="50px" width="auto">
+                        </a>
+                    </div>
+        
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/brands/logo/dng.png" alt="D&G Logo" height="50px" width="auto">
+                        </a>
+                    </div>
+        
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/brands/logo/versace.jpg" alt="Versace Logo" height="50px" width="auto">
+                        </a>
+                    </div>
+        
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/brands/logo/ck.png" alt="CK Logo" height="50px" width="auto">
+                        </a>
+                    </div>
+        
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/brands/logo/burberry-logo-designer-label-fashion-brand-coty-fashion-house-clothes-trench-coat-burberry-luxury-goods-printmaking.png"
+                                alt="Burberry Logo" height="50px" width="auto">
+                        </a>
+                    </div>
+        
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/brands/logo/hm.jpg" alt="H&M Logo" height="50px" width="auto">
+                        </a>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+
+        <section id="product1" class="section-p1">
+            <h2>Featured Products</h2>
+            <p>New Modern Summer Design</p>
+        
+            <div class="pro-container">
+        
+                <!-- CARD 1: RED VEST -->
+                <div class="pro" data-id="p001" data-name="Brand Red Vest Shirt" data-price="6000">
+                    <!-- Clicking the image or descriptive area routes the user to the product configuration details page -->
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p001';"
+                        style="cursor: pointer;">
+                        <img src="img/menclothes/1.jpg" alt="Brand Red Vest Shirt View">
+                        <div class="des">
+                            <span>kulture</span>
+                            <h5>Brand Red Vest Shirt</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <!-- Independent Quick Checkout Action Handle Anchor -->
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 2: GREEN DRESS -->
+                <div class="pro" data-id="p002" data-name="Rosy Green Short Dress" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct2.html?id=p002';"
+                        style="cursor: pointer;">
+                        <img src="img/women/1.jpg" alt="Rosy Green Short Dress View">
+                        <div class="des">
+                            <span>Fendi</span>
+                            <h5>Rosy Green Short Dress</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 3: ILLUSTRATIVE T-SHIRT -->
+                <div class="pro" data-id="p003" data-name="Illustrative T Shirt" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p003';"
+                        style="cursor: pointer;">
+                        <img src="img/menclothes/sleeve1.jpg" alt="Illustrative T Shirt View">
+                        <div class="des">
+                            <span>pleasure</span>
+                            <h5>Illustrative T Shirt</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 4: V-NECK SWEATER -->
+                <div class="pro" data-id="p004" data-name="Multi Color V-Neck Sweater" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p004';"
+                        style="cursor: pointer;">
+                        <img src="img/menclothes/6.jpg" alt="Multi Color V-Neck Sweater View">
+                        <div class="des">
+                            <span>kulture</span>
+                            <h5>Multi Color V-Neck Sweater</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 5: BODY HUG DRESS -->
+                <div class="pro" data-id="p005" data-name="Black Body Hug Dress" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p005';"
+                        style="cursor: pointer;">
+                        <img src="img/women/3.jpg" alt="Black Body Hug Dress View">
+                        <div class="des">
+                            <span>pleasure wears</span>
+                            <h5>Black Body Hug Dress</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 6: LONG SLEEVE -->
+                <div class="pro" data-id="p006" data-name="Indigo Collar Neck Long Sleeve" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p006';"
+                        style="cursor: pointer;">
+                        <img src="img/menclothes/14.jpg" alt="Indigo Collar Neck Long Sleeve View">
+                        <div class="des">
+                            <span>kulture</span>
+                            <h5>Indigo Collar Neck Long Sleeve</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 7: CORPORATE SHIRT -->
+                <div class="pro" data-id="p007" data-name="Corporate Shirt" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p007';"
+                        style="cursor: pointer;">
+                        <img src="img/menclothes/9.jpg" alt="Corporate Shirt View">
+                        <div class="des">
+                            <span>pleasurewears</span>
+                            <h5>Coperate Shirt</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 8: BACK JUMPER -->
+                <div class="pro" data-id="p008" data-name="Open Back Jumper" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p008';"
+                        style="cursor: pointer;">
+                        <img src="img/women/wpants5.jpg" alt="Open Back Jumper View">
+                        <div class="des">
+                            <span>kulture</span>
+                            <h5>Open Back Jumper</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+            </div>
+        </section>
+
+
+        <section id="banner" class="section-m1"
+            style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        
+            <!-- Text nodes perfectly matched to your target CSS font sizes -->
+            <h2>Swift Home Delivery</h2>
+            <h4>Get Up to <span>70% Off</span></h4>
+        
+            <!-- Interactive Store Routing Anchor Wrapper -->
+            <a href="shop.html" class="banner-action-link">
+                <button class="normal" type="button" title="View our complete seasonal inventory">View More</button>
+            </a>
+        </section>
+
+
+        <section id="product1" class="section-p1">
+            <h2>New Arrival</h2>
+            <p>Trendy Classic Fashion</p>
+            <div class="pro-container">
+        
+                <!-- CARD 9: CASUAL COAT -->
+                <div class="pro" data-id="p009" data-name="Ash Top-Bottom Casual Coat" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p009';"
+                        style="cursor: pointer;">
+                        <img src="img/women/2.jpg" alt="Ash Top-Bottom Casual Coat View">
+                        <div class="des">
+                            <span>kulture</span>
+                            <h5>Ash Top-Bottom Casual Coat</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 10: FLOWER HUG DESIGN -->
+                <div class="pro" data-id="p010" data-name="Flower Body Hug Design" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p010';"
+                        style="cursor: pointer;">
+                        <img src="img/women/5.jpg" alt="Flower Body Hug Design View">
+                        <div class="des">
+                            <span>Fendi</span>
+                            <h5>Flower Body Hug Design</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 11: LONG SLEEVE T-SHIRT -->
+                <div class="pro" data-id="p011" data-name="Ash long Sleeve T Shirt" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p011';"
+                        style="cursor: pointer;">
+                        <img src="img/menclothes/2.jpg" alt="Ash long Sleeve T Shirt View">
+                        <div class="des">
+                            <span>pleasure</span>
+                            <h5>Ash long Sleeve T Shirt</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 12: CAMO SHIRT -->
+                <div class="pro" data-id="p012" data-name="Camo Inner white Shirt" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p012';"
+                        style="cursor: pointer;">
+                        <img src="img/menclothes/10.jpg" alt="Camo Inner white Shirt View">
+                        <div class="des">
+                            <span>kulture</span>
+                            <h5>Camo Inner white Shirt</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 13: PATCHY TOP -->
+                <div class="pro" data-id="p013" data-name="Patchy Top High Class" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p013';"
+                        style="cursor: pointer;">
+                        <img src="img/women/wpants3.jpg" alt="Patchy Top High Class View">
+                        <div class="des">
+                            <span>pleasure wears</span>
+                            <h5>Patchy Top High Class</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 14: INDIGO STRIP LONG SLEEVE -->
+                <div class="pro" data-id="p014" data-name="Indigo Stripe Long Sleeve" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p014';"
+                        style="cursor: pointer;">
+                        <img src="img/menclothes/strip1.jpg" alt="Indigo Stripe Long Sleeve View">
+                        <div class="des">
+                            <span>kulture</span>
+                            <h5>Indigo Stripe Long Sleeve</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 15: LEATHER PANTS -->
+                <div class="pro" data-id="p015" data-name="Leather Pants" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p015';"
+                        style="cursor: pointer;">
+                        <img src="img/women/15.png" alt="Leather Pants View">
+                        <div class="des">
+                            <span>pleasurewears</span>
+                            <h5>Leather Pants</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+        
+                <!-- CARD 16: BLUE OUTLINE DRESS -->
+                <div class="pro" data-id="p016" data-name="Blue Outline Dress" data-price="6000">
+                    <div class="pro-clickable-area" onclick="window.location.href='sproduct.html?id=p016';"
+                        style="cursor: pointer;">
+                        <img src="img/women/7.jpg" alt="Blue Outline Dress View">
+                        <div class="des">
+                            <span>kulture</span>
+                            <h5>Blue Outline Dress</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₦6,000</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add-to-cart-trigger" style="background: none; border: none;"
+                        title="Add item directly to shopping cart">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="discover">
+            <!-- Spelling fixed, keeping your custom #discover1 hook active for alignment -->
+            <h2 id="discover1">Discover a World of Unlimited Style & Fashion</h2>
+        </section>
+
+
+        <section id="sm-banner" class="section-p1">
+        
+            <!-- DEAL BANNER BLOCK 1 -->
+            <div class="banner-box">
+                <h4>Awesome Deals</h4>
+                <h2>Buy 1 & Get 1 Free</h2>
+                <span>The best classic dress is on sale at EazzyGlobal</span>
+        
+                <!-- Interactive Navigation Anchor Wrapper -->
+                <a href="shop.html" class="banner-route-link">
+                    <button class="white" type="button" title="View details for Buy 1 Get 1 free inventory items">Learn
+                        More</button>
+                </a>
+            </div>
+        
+            <!-- DEAL BANNER BLOCK 2 -->
+            <div class="banner-box banner-box2">
+                <h4>Spring/Summer Collection</h4>
+                <h2>The All in 1</h2>
+                <span>The best classic dress is on sale at EazzyGlobal</span>
+        
+                <!-- Interactive Navigation Anchor Wrapper -->
+                <a href="shop.html" class="banner-route-link">
+                    <button class="white" type="button"
+                        title="View our complete Spring and Summer inventory collection">Collection</button>
+                </a>
+            </div>
+        </section>
+
+
+        <section id="banner3">
+        
+            <!-- ACCESSORY CARD 1: HATS -->
+            <!-- Added a subtle dark background gradient layer directly to the element to improve text readability -->
+            <div class="banner-box"
+                style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/hat.jpg'); cursor: pointer;"
+                onclick="window.location.href='shop.html?category=hats';">
+                <h2>HATS</h2>
+                <h3>STYLISH COLLECTION - 50% OFF</h3>
+            </div>
+        
+            <!-- ACCESSORY CARD 2: FOOTWEAR -->
+            <div class="banner-box banner-box2"
+                style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/shoes/1.jpg'); cursor: pointer;"
+                onclick="window.location.href='shop.html?category=shoes';">
+                <h2>NEW FOOT WEAR COLLECTION</h2>
+                <h3>ALL YOU NEED</h3>
+            </div>
+        
+            <!-- ACCESSORY CARD 3: SHADES -->
+            <div class="banner-box banner-box3"
+                style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/glasses/5.jpg'); cursor: pointer;"
+                onclick="window.location.href='shop.html?category=shades';">
+                <h2>SHADES</h2>
+                <h2>NEW COLECTION</h2>
+                <h3>CLASSY AND TRENDY</h3>
+            </div>
+        </section>
+
+
+        <section id="newsletter" class="section-p1 section-m1">
+        
+            <!-- LEFT SIDE: ENGAGEMENT TEXT -->
+            <div class="newstext">
+                <h4>Sign Up For Our Newsletter</h4>
+                <p>Get E-mail updates about our latest shop and <span>special offer.</span></p>
+        
+                <!-- Live Action Status Notification Window (Manipulated via jQuery) -->
+                <div id="newsletter-response" style="font-size: 13px; font-weight: 600; margin-top: 8px; display: none;"></div>
+            </div>
+        
+            <!-- RIGHT SIDE: SECURE SUBSCRIPTION SUBMISSION FORM -->
+            <!-- Action route and method attributes map to our upcoming Node.js api system router loops -->
+            <form id="frm-newsletter-intake" class="form" action="/api/newsletter/subscribe" method="POST"
+                onsubmit="return false;">
+                <input type="email" id="txt-newsletter-email" placeholder="Your email address" required
+                    aria-label="Email address for subscription">
+                <button id="btn-newsletter-submit" class="normal" type="submit">Sign Up</button>
+            </form>
+        </section>
+
+
+        <footer class="section-p1">
+            <div class="col">
+                <img class="logo" src="img/logo.jpg" height="80px" width="100px" alt="Cara Branding Footer Logo">
+                <h4>Contact</h4>
+                <p><strong>Address: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, fuga., Lagos
+                </p>
+                <p><strong>Phone: </strong>Lorem ipsum dolor sit amet.</p>
+                <p><strong>Hours: </strong>08:00 - 18:00, Mon - Sat</p>
+        
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit Facebook profile"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit Instagram profile"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit Twitter profile"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit Youtube channel"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <h4>About</h4>
+                <a href="about.html">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">T&C</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <!-- Synchronized directly to your e-commerce cart file path -->
+                <a href="cart.html">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+        
+            <!-- COL 4: DISPATCH SOFTWARE INSTALL CHANNELS -->
+            <div class="col install">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play</p>
+                <div class="row">
+                    <a href="https://play.google.com" target="_blank" rel="noopener"><img src="img/store1.png" height="80px"
+                            width="150px" alt="Download on Google Play Store"></a>
+                    <a href="https://apps.apple.com" target="_blank" rel="noopener"><img src="img/store2.png" height="80px"
+                            width="150px" alt="Download on Apple App Store"></a>
+                </div>
+                <p>Secured payment Gateways</p>
+                <img src="img/pay.png" height="70px" width="150px" alt="Supported Payment Options">
+            </div>
+        
+            <div class="copyright">
+                <!-- Wrapped inside an ID wrapper node to hook programmatic date updates via script tools later -->
+                <p>ⓒ <span id="copyright-year">2026</span>, EazzyGlobal - E Commerce Site</p>
+            </div>
+        </footer>
+
+        <script src="https://jquery.com"></script>
+        <script src="script.js"></script>
+    </body>
+
+
+</html>
