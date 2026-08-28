@@ -1,0 +1,1972 @@
+/* choosing avaliable fonts online */
+@import url('https://googleapis.com');
+
+/* general/Global styling for the body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Global variables for consistent styling (Preserving your exact color choices) */
+:root {
+    --primary-color: #088178;
+    /* Your classic Cara theme teal preserved */
+    --dark-color: #041e42;
+    /* Your deep background navy preserved */
+    --text-color: #818ba0;
+    /* Your default reading gray preserved */
+    --background-color: #fbfcf8;
+    /* Your pure white canvas background preserved */
+    --card-background: #f5f5f5;
+    /* Your light card background tint preserved */
+    --theme-btn-color: #088178;
+    /* Your teal button indicator preserved */
+
+    /* ADDED: Modern transparent glassmorphic background properties */
+    --primary-translucent: rgba(8, 129, 120, 0.12);
+    /* Frosty translucent teal */
+    --white-translucent: rgba(255, 255, 255, 0.08);
+    /* See-through glass layer */
+    --border-color: #e2e8f0;
+    /* Clean, thin border lines */
+    --headline-color: #041e42;
+
+    /* ADDED: Standardized animation speed for modern theme transitions */
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme Colors (Preserving your dark properties with smooth transition rules) */
+body.dark-theme {
+    --background-color: #121212;
+    /* Your dark background preserved */
+    --text-color: #f5f5f5;
+    /* Your dark text contrast preserved */
+    --card-background: #1e1e1e;
+    /* Your dark card surface panel preserved */
+    --theme-btn-color: #00ffea;
+    /* Your neon mode toggle accent preserved */
+
+    /* ADDED: Adaptive dark mode adjustments for structural lines */
+    --primary-translucent: rgba(0, 255, 234, 0.12);
+    /* Flips to a neon translucent glow */
+    --border-color: #334155;
+    /* Dark slate separator lines */
+    --headline-color: #f8fafc;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 63px;
+    color: var(--text-color);
+    /* Linked smoothly to your default text color tracking */
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 54px;
+    /* CHANGED: Swapped static black for adaptive token so text flips cleanly in dark mode */
+    color: var(--headline-color);
+    margin-bottom: .6em;
+}
+
+h4 {
+    font-size: 15px;
+    /* CHANGED: Swapped static black for adaptive token */
+    color: var(--headline-color);
+}
+
+h5 {
+    color: var(--text-color);
+}
+
+h6 {
+    /* FIXED: Corrected invalid 500px unit code parameter to an exact style weight integer */
+    font-weight: 500;
+    font-size: 10px;
+}
+
+span {
+    color: var(--text-color);
+}
+
+p {
+    /* OPTIMIZED: Rebalanced size properties for modern grid item breathing room */
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 10px 0 15px 0;
+}
+
+
+/* Layout Utility Classes Preserved */
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+/* --- VARIETY 1: THE GLASS ACCENT TEAL BUTTON FRAME --- */
+button.normal {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 30px;
+    color: var(--primary-color);
+    background-color: var(--primary-translucent);
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* CHANGED: Synced to global transition variables for physical response lift */
+    transition: all var(--transition-smooth);
+}
+
+/* Variety 1 Focus Interactivity */
+button.normal:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    /* Perfectly inverts text tone on selection */
+    box-shadow: 0 4px 14px var(--primary-translucent);
+    transform: translateY(-2px);
+    /* Premium micro-elevation bounce effect */
+}
+
+/* --- VARIETY 2: THE GLASS WHITE/MINIMAL PILL BUTTON --- */
+button.white {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 14px 30px;
+    /* CHANGED: Updated text/border markers to sync natively across dark mode panels */
+    color: var(--headline-color);
+    background-color: var(--white-translucent);
+    border: 1px solid var(--border-color);
+    /* CHANGED: Transformed standard box edge to a smooth rounded pill profile */
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+    outline: none;
+    transition: all var(--transition-smooth);
+}
+
+/* Variety 2 Focus Interactivity */
+button.white:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    /* CHANGED: Swapped standard easing rules to use your root transition pipeline */
+    transition: background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+/* HEADER BASE LAYOUT WRAPPER */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+
+    /* MODIFIED: Reduced background opacity from 0.75 to 0.45 for a highly clear, transparent glass feel */
+    background-color: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(25px);
+    /* Boosted blur effect to make text underneath smooth and legible */
+    -webkit-backdrop-filter: blur(25px);
+
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+
+    z-index: 999 !important;
+    position: sticky;
+    top: 0;
+    left: 0;
+    transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+/* Dark mode adjustment for the transparent frosted header background */
+body.dark-theme #header {
+    /* MODIFIED: Adjusted deep slate backing tracks to match the new transparent look */
+    background-color: rgba(15, 23, 42, 0.45);
+}
+
+/* SITE IDENTIFICATION LOGO GRAPHICS */
+#header img {
+    border-radius: var(--border-radius-modern);
+    /* Synced radius parameters to global modern standard */
+    object-fit: contain;
+    transition: transform var(--transition-smooth);
+}
+
+#header img:hover {
+    transform: scale(1.03);
+}
+
+/* NAV LINKS BLOCK WRAPPERS */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+    left: 100px;
+    display: flex;
+    align-items: center;
+}
+
+/* NAV LINK TYPE CORE STATE ELEMENT */
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    /* CHANGED: Linked to your adaptive variable so font color flips safely in dark mode */
+    color: var(--headline-color);
+    transition: color var(--transition-smooth);
+}
+
+/* CHANGED: Shifted highlight colors from raw aqua to match your theme palette */
+#navbar li a:hover,
+#navbar li a.active {
+    color: var(--primary-color);
+}
+
+/* INTERACTIVE BOTTOM HIGHLIGHT UNDERLINE ANIMATION */
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    /* Slightly thickened underline indicator line */
+    background: var(--primary-color);
+    /* Matches your classic teal or electric blue mode toggle */
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+    border-radius: var(--border-radius-pill);
+    animation: navLineReveal var(--transition-smooth);
+}
+
+@keyframes navLineReveal {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 30px;
+        opacity: 1;
+    }
+}
+
+
+
+/* RESPONSIVE DESKTOP INVISIBILITY LAYERS */
+#mobile {
+    display: none;
+    /* Keeps mobile icons hidden on wide screens, exactly as you coded */
+    align-items: center;
+}
+
+#close {
+    display: none;
+    /* Hidden on desktop, activated inside your media queries section later */
+}
+
+/* HOME PAGE HERO VIEWPORT CANVASES */
+#hero {
+    background-image: url("img/slider/slider0.jpg");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 30% right 0px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ADDED: A premium transparent tint layer to ensure your text reads easily over your slider image */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Very light glaze overlay layer */
+    z-index: 1;
+}
+
+body.dark-theme #hero::before {
+    background-color: rgba(15, 23, 42, 0.4);
+    /* Darkens slider image automatically in dark mode */
+}
+
+/* 80% SCREEN WIDTH CENTERED CONTAINER BOX */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 2;
+    /* Pushes text content to layer safely over the background image glaze */
+}
+
+/* THE REBALANCED BANNER HEADER BLOCKS */
+#hero h2 {
+    /* OPTIMIZED: Rebalanced hierarchy scale so your secondary title flows neatly */
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--headline-color);
+    margin-bottom: 0.2em;
+    transition: color var(--transition-smooth);
+}
+
+#hero h1 {
+    /* OPTIMIZED: Linked color to your primary teal variable line for a clean, modern accent */
+    color: var(--primary-color);
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;
+    
+    transition: color var(--transition-smooth);
+}
+
+#hero p {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    transition: color var(--transition-smooth);
+}
+
+/* --- MASTER VARIETY 2 IMPLEMENTATION: TRANSLUCENT COATED PILL BUTTON --- */
+#hero button {
+    /* REMOVED: Replaced static image background with a high-end transparent glass finish */
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 40px;
+    color: var(--primary-color);
+    background-color: var(--primary-translucent);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-pill);
+    /* Curves into your custom smooth 50px pill shape */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+    outline: none;
+    transition: all var(--transition-smooth);
+}
+
+/* Variety 2 Interactive Focus States */
+#hero button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    /* Premium white/dark background invert look */
+    box-shadow: 0 10px 20px var(--primary-translucent);
+    transform: translateY(-3px);
+    /* Subtle physics lift animation */
+}
+
+
+
+/* FASHION BRAND PARTICIPANTS ROW */
+.brands .wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2em 0;
+}
+
+.brands .item img {
+    opacity: .25;
+    transition: opacity var(--transition-smooth);
+}
+
+.brands .item a:hover img {
+    /* Instantly reveals full logo opacity on hover interaction */
+    opacity: 1;
+}
+
+
+
+/* THE CORE PRODUCT GRID VIEWPORT AREA */
+#product1 {
+    text-align: center;
+}
+
+#product1 h2 {
+    /* OPTIMIZED: Adjusted size scale and linked to adaptive headline token for dark themes */
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--headline-color);
+    margin-bottom: 8px;
+    transition: color var(--transition-smooth);
+}
+
+#product1 p {
+    font-size: 16px;
+    /* Rebalanced to look clean under your h2 headline title */
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+/* FLEXIBLE GRID CONTAINER */
+#product1 .pro-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 0;
+    flex-wrap: wrap;
+}
+
+/* INDIVIDUAL PRODUCT LAYOUT CARD NODE CONTAINER */
+#product1 .pro {
+    width: 23%;
+    min-width: 250px;
+    padding: 12px;
+    /* CHANGED: Overhauled to a clean, adaptive variable token setup for seamless dark mode */
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    margin: 15px 0;
+    /* CHANGED: Swapped static shadow to a modern, lightweight soft blur profile shadow */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    transition: all var(--transition-smooth);
+}
+
+/* Card Selection Interactivity Focus */
+#product1 .pro:hover {
+    /* CHANGED: Smoothly scales up and casts a rich premium ambient drop shadow */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+}
+
+#product1 .pro img {
+    width: 100%;
+    border-radius: 16px;
+    /* Curved inside the card margins neatly */
+    transition: transform var(--transition-smooth);
+}
+
+/* Subtle image zoom inside card limits on hover */
+#product1 .pro:hover img {
+    transform: scale(1.02);
+}
+
+/* DESCRIPTION TEXT BLOCKS BUILDER */
+#product1 .pro .des {
+    text-align: start;
+    padding: 12px 0 4px 0;
+}
+
+#product1 .pro .des span {
+    color: var(--text-color);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#product1 .pro .des h5 {
+    padding-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--headline-color);
+    transition: color var(--transition-smooth);
+}
+
+#product1 .pro .des i {
+    font-size: 11px;
+    color: #f59e0b;
+    /* Fixed warm amber hue for rating stars across all modes */
+    margin-top: 6px;
+}
+
+#product1 .pro .des h4 {
+    padding-top: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-color);
+    /* Kept your classic store teal price accent color active */
+    transition: color var(--transition-smooth);
+}
+
+/* --- MASTER VARIETY 1 IMPLEMENTATION: INTERACTIVE FLOATING CART ICON --- */
+#product1 .pro .cart {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    right: 12px;
+
+    /* CHANGED: Swapped solid background for an elegant translucent brand accent background shape */
+    background-color: var(--primary-translucent);
+    color: var(--primary-color);
+    border: 1px solid rgba(8, 129, 120, 0.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-smooth);
+}
+
+/* Inverts cart background instantly on card hover to draw click attention */
+#product1 .pro:hover .cart {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 4px 10px var(--primary-translucent);
+}
+
+
+
+/* MARKETING CORE DISCOVER SLOGAN SECTION */
+#discover {
+    padding: 40px 20px;
+    /* Expanded padding slightly for an elegant, modern look */
+    margin: 2px 0;
+    background-color: var(--card-background);
+    /* Automatically adapts to dark mode backgrounds */
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+#discover1 {
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: var(--primary-color);
+    /* Linked smoothly to your active teal tracking variable */
+    transition: color var(--transition-smooth);
+}
+
+
+
+/* WIDE CAMPAIGN COLLECTION BANNER CORE */
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* CHANGED: Wrapped image in a soft dark linear gradient to ensure high text contrast */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("img/slider/slider3.jpg");
+    width: 100%;
+    height: 70vh;
+    /* Scaled down slightly to look clean and modern on desktop screens */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 0;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+#banner h2 {
+    /* REMOVED: Swapped raw black/white overrides to ensure uniform title presentation */
+    font-size: 32px;
+    font-weight: 500;
+    color: #ffffff;
+    /* Explicitly white to contrast clearly against the image overlay */
+    padding: 0;
+    margin: 0;
+}
+
+#banner h4 {
+    font-size: 54px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 12px 0 24px 0;
+    line-height: 1.2;
+}
+
+#banner h4 span {
+    color: #ffbd27;
+    /* Swapped standard red to a high-contrast amber tone for dark layouts */
+    font-weight: 800;
+}
+
+/* --- MASTER VARIETY 1 IMPLEMENTATION: GLASS ACCENT ACTION BUTTON --- */
+#banner button {
+    /* REMOVED: Replaced flat orange background with our premium, translucent glass design */
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 36px;
+    color: #ffffff !important;
+    /* Forces text to remain legible on the dark background image */
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid #ffffff !important;
+    border-radius: var(--border-radius-modern);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+    outline: none;
+    transition: all var(--transition-smooth);
+}
+
+/* Variety 1 Interactive Focus States */
+#banner button:hover {
+    background-color: #ffffff !important;
+    color: #088178 !important;
+    /* Smoothly inverts color to your primary theme teal on hover */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+
+
+/* DUAL COLUMNS GRID WRAPPER */
+#sm-banner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Added an implicit grid gap to prevent layout columns from overlapping on resize */
+}
+
+/* --- DUAL BANNER CONTAINER BLOCKS --- */
+#sm-banner .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* CHANGED: Wrapped background in an elegant, translucent protection layer to ensure text contrast */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("img/stock.jpg");
+    min-width: 580px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    border-radius: var(--border-radius-modern);
+    /* Added modern geometric rounding */
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-smooth);
+}
+
+#sm-banner .banner-box2 {
+    /* CHANGED: Wrapped image in a translucent protection layer */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("img/menclothes/4.jpg");
+}
+
+/* THE INNER TYPOGRAPHY CONTENT BLOCKS */
+#sm-banner h4 {
+    color: #e2e8f0;
+    /* Swapped muted gold for a clean modern white contrast tone */
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#sm-banner h2 {
+    color: #ffffff;
+    /* CHANGED: Set to white to ensure text contrast over the dark overlay */
+    font-size: 28px;
+    font-weight: 800;
+    margin: 4px 0 8px 0;
+}
+
+#sm-banner span {
+    color: #cbd5e1;
+    /* Soft contrast white text */
+    font-size: 15px;
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+
+/* --- VARIETY 2 IMPLEMENTATION ON THE HOVER EVENT --- */
+#sm-banner .banner-box:hover button {
+    /* REMOVED: Replaced flat background colors with an interactive glass glow */
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px var(--primary-translucent);
+    transform: translateY(-2px);
+}
+
+
+
+/* --- TRIPLE BANNER BLOCKS SECTION (#banner3) --- */
+#banner3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 80px;
+    gap: 10px;
+    /* Added structured gap to prevent collision layout shifts */
+}
+
+#banner3 .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* CHANGED: Wrapped accessory items inside an elegant dark linear gradient overlay */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("img/hat.jpg");
+    min-width: 60px;
+    flex: 1;
+    /* Automatically allows items to share layout width evenly */
+    height: 40vh;
+    /* Rebalanced height to match modern banner look */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: var(--border-radius-modern);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-smooth);
+}
+
+#banner3 .banner-box2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("img/shoes/1.jpg");
+}
+
+#banner3 .banner-box3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("img/glasses/5.jpg");
+}
+
+/* ACCESSORY CARD TYPOGRAPHY HEADINGS */
+#banner3 h2 {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+#banner3 h3 {
+    /* CHANGED: Swapped electric aqua text for your clean, branding primary color toggle */
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+
+
+/* MARKETING SUBSCRIPTION SECTION CONTAINER */
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    /* CHANGED: Transformed into a modern developer panel with subtle inner borders */
+    background-color: var(--dark-color);
+    border-radius: var(--border-radius-modern);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#newsletter h4 {
+    font-size: 22px;
+    /* Amplified header size slightly for an elegant, modern impact */
+    font-weight: 600;
+    color: #ffffff;
+    /* Explicitly crisp white against dark navy background tracks */
+}
+
+#newsletter p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: 4px;
+}
+
+#newsletter p span {
+    color: #ffbd27;
+    /* Warm high-contrast amber tone for special promotional lines */
+    font-weight: 600;
+}
+
+/* HORIZONTAL REGISTRATION FLEX LINE */
+#newsletter .form {
+    display: flex;
+    width: 40%;
+}
+
+/* THE SEAMLESS INLINE EMAIL INPUT TRACK */
+#newsletter input {
+    height: 3.125rem;
+    padding: 0 1.24em;
+    font-size: 14px;
+    width: 100%;
+    /* CHANGED: Overhauled to an integrated dark-room glass input appearance */
+    background-color: rgba(15, 23, 42, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px 0 0 4px !important;
+    /* Clipped right edge to anchor to button */
+    color: #ffffff !important;
+    outline: none;
+    transition: all var(--transition-smooth);
+}
+
+#newsletter input:focus {
+    border-color: var(--primary-color) !important;
+    background-color: rgba(15, 23, 42, 0.8) !important;
+}
+
+/* --- MASTER VARIETY 1 INTEGRATION: THE NEWSLETTER SUBMIT TRIGGER --- */
+#newsletter button.normal {
+    font-size: 13px;
+    font-weight: 600;
+    height: 3.125rem;
+    padding: 0 24px;
+    white-space: nowrap;
+    /* CHANGED: Converted flat fill to an elegant, high-contrast translucent teal variant */
+    color: #ffffff !important;
+    background-color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 0 4px 4px 0 !important;
+    /* Locks seamlessly onto your input frame */
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+}
+
+/* Variety 1 Focus Interactivity */
+#newsletter button.normal:hover {
+    background-color: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+    box-shadow: 0 0 14px rgba(8, 129, 120, 0.4);
+}
+
+
+/* --- GENERAL SITE FOOTER GRID ARCHITECTURE --- */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+    padding-top: 60px !important;
+    margin-top: 40px;
+    transition: border-color var(--transition-smooth);
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo {
+    margin-bottom: 24px;
+    border-radius: var(--border-radius-modern);
+}
+
+footer h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--headline-color);
+    padding-bottom: 20px;
+    transition: color var(--transition-smooth);
+}
+
+footer p {
+    font-size: 13px;
+    margin: 0 0 12px 0;
+    color: var(--text-color);
+    transition: color var(--transition-smooth);
+}
+
+footer a {
+    font-size: 14px;
+    text-decoration: none;
+    /* CHANGED: Swapped static dark gray text for an adaptive variable link so text doesn't vanish in dark mode */
+    color: var(--text-color);
+    margin-bottom: 12px;
+    transition: all var(--transition-smooth);
+}
+
+/* FOOTER INTERACTIVE SOCIAL LINKS */
+footer .follow {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+footer .follow i {
+    color: var(--text-color);
+    font-size: 16px;
+    padding-right: 16px;
+    /* Expanded tap targets for mobile layouts */
+    cursor: pointer;
+    transition: color var(--transition-smooth);
+}
+
+/* CORE APP DIRECTORY DOWNLOAD TILES */
+footer .install .row img {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-modern);
+    transition: border-color var(--transition-smooth);
+}
+
+footer .install img {
+    margin: 10px 0 15px 0;
+}
+
+/* THE MASTER SELECTION FOCUS TRIGGERS */
+footer .follow i:hover,
+footer a:hover {
+    color: #ac8007;
+    /* Preserved your classic subtle gold brand hover color */
+    padding-left: 4px;
+    /* Added an elegant modern micro-indent hover effect */
+}
+
+/* BOTTOM PLATFORM WATERMARK CONTAINER */
+footer .copyright {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding: 24px 0;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--text-color);
+    transition: border-color var(--transition-smooth);
+}
+
+
+
+/* SUB-PAGE HERO CANVAS HEADER */
+#page-header {
+    /* CHANGED: Wrapped image in a dark linear gradient to ensure clean typography contrast */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("img/landscape2.jpg");
+    width: 100%;
+    height: 40vh;
+    /* Rebalanced height to match a cleaner, modern sub-page layout proportion */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#page-header h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff !important;
+    /* Overridden orangered to clean white for high contrast text readability */
+    margin: 0;
+}
+
+#page-header p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #cbd5e1 !important;
+    /* Soft white contrast subtitle line tint */
+    margin: 8px 0 0 0;
+}
+
+/* STORE PAGE PAGINATION CONTROL TRACK */
+#pagination {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* --- MASTER VARIETY 1 IMPLEMENTATION: THE TRANSPARENT PAGINATION LINK --- */
+#pagination a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 18px;
+    /* CHANGED: Overhauled to use our premium, frosty translucent glass style */
+    color: var(--primary-color);
+    background-color: var(--primary-translucent);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-modern);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+    transition: all var(--transition-smooth);
+}
+
+/* Variety 1 Interactive Focus States */
+#pagination a:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 4px 10px var(--primary-translucent);
+    transform: translateY(-2px);
+}
+
+#pagination a i {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* --- SINGLE PRODUCT VIEW GRIDS (#prodetails) --- */
+#prodetails {
+    display: flex;
+    margin-top: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#prodetails .single-pro-image {
+    width: 40%;
+    margin-right: 50px;
+}
+
+.small-img-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    /* Adds consistent breathing room below the primary view frame */
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+.small-img-col img {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-modern);
+    transition: all var(--transition-smooth);
+}
+
+.small-img-col img:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.03);
+    /* Subtle premium inner frame zoom selection feedback */
+}
+
+#prodetails .single-pro-details {
+    width: 50%;
+    padding-top: 10px;
+}
+
+#prodetails .single-pro-details h4 {
+    padding: 20px 0 10px 0;
+    color: var(--primary-color);
+    /* Matches store price accents */
+}
+
+#prodetails .single-pro-details h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* THE INTEGRATED DROPDOWN GLASS SELECTORS */
+#prodetails .single-pro-details select {
+    display: block;
+    padding: 10px 16px;
+    margin-bottom: 20px;
+    width: 200px;
+    font-size: 14px;
+    font-weight: 500;
+    /* CHANGED: Overhauled browser default dropdown arrow tracks into a dark-room glass input appearance */
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    color: var(--headline-color);
+    border-radius: var(--border-radius-modern);
+    outline: none;
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+}
+
+#prodetails .single-pro-details select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-translucent);
+}
+
+/* THE INLINE PRODUCT QUANTITY COUNTER TRACK */
+#prodetails .single-pro-details input {
+    width: 60px;
+    height: 48px;
+    padding-left: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 12px;
+    /* CHANGED: Replaced standard borders with a sleek transparent input track frame */
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    color: var(--headline-color);
+    border-radius: var(--border-radius-modern);
+    transition: all var(--transition-smooth);
+}
+
+#prodetails .single-pro-details input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-translucent);
+}
+
+/* --- MASTER VARIETY 1 IMPLEMENTATION: ADD TO CART TRIGGER --- */
+#prodetails .single-pro-details button {
+    /* REMOVED: Replaced flat solid fill with our elegant transparent glass variety button class selectors */
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 36px;
+    color: var(--primary-color);
+    background-color: var(--primary-translucent);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-modern);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+}
+
+#prodetails .single-pro-details button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 4px 14px var(--primary-translucent);
+    transform: translateY(-2px);
+}
+
+#prodetails .single-pro-details span {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-color);
+    display: block;
+    margin-top: 20px;
+}
+
+
+
+/* UNIQUE SUB-PAGE IMAGE BANNER ASSIGNMENTS */
+#page-header.blog-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/rosary.jpg');
+}
+
+#page-header.about-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/landscape3.jpg');
+}
+
+/* BLOG FEED LAYOUT CORE */
+#blog {
+    /* Kept your exact structural spacing dimensions intact */
+    padding: 150px 150px 0 150px;
+}
+
+#blog .blog-box .blog-date {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-bottom: 90px;
+}
+
+#blog .blog-img {
+    width: 50%;
+    margin-right: 40px;
+    overflow: hidden;
+    border-radius: var(--border-radius-modern);
+}
+
+#blog img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform var(--transition-smooth);
+}
+
+#blog .blog-box:hover .blog-img img {
+    transform: scale(1.03);
+}
+
+#blog .blog-details {
+    width: 50%;
+}
+
+#blog .blog-details a {
+    text-decoration: none;
+    font-size: 13px;
+    /* Slightly amplified readability footprint */
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    /* CHANGED: Swapped static black for adaptive token so links flip color safely in dark mode */
+    color: var(--headline-color);
+    display: inline-block;
+    transition: color var(--transition-smooth);
+}
+
+#blog .blog-details a::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    /* Slightly thickened for crisp styling profile visibility */
+    /* CHANGED: Linked line fill to match adaptive headline text weights natively */
+    background-color: var(--headline-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -60px;
+    transition: background-color var(--transition-smooth), width var(--transition-smooth);
+}
+
+#blog .blog-details a:hover {
+    color: var(--primary-color);
+}
+
+#blog .blog-details a:hover::after {
+    background-color: var(--primary-color);
+    width: 65px;
+}
+
+#blog .blog-box h1 {
+    position: absolute;
+    top: -45px;
+    left: 0;
+    font-size: 80px;
+    font-weight: 700;
+    /* CHANGED: Swapped static gray to a responsive translucent tint so numbers adapt across light and dark modes */
+    color: rgba(15, 23, 42, 0.08);
+    z-index: -1;
+    /* Keeps digits sitting safely behind textual reading blocks */
+    transition: color var(--transition-smooth);
+}
+
+body.dark-theme #blog .blog-box h1 {
+    color: rgba(255, 255, 255, 0.05);
+}
+
+
+
+/* ABOUT PAGE PRESENTATION PROFILE CONTAINERS  */
+#about-head {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 40px;
+    transition: border-color var(--transition-smooth);
+}
+
+#about-head img {
+    width: 50%;
+    height: auto;
+    border-radius: var(--border-radius-modern);
+}
+
+#about-head h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#about-head p {
+    /* CHANGED: Removed manual Verdana sizing to coordinate layout fonts cleanly with your new theme */
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+#about-head abbr {
+    text-decoration: none;
+    border-bottom: 2px dashed var(--primary-color);
+    /* Elegant brand-colored dash underline */
+    color: var(--headline-color);
+}
+
+.modern-ticker-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    border-radius: var(--border-radius-modern);
+    position: relative;
+    transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.modern-ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    /* Linked color to adaptive variable so it reads beautifully on light or dark themes */
+    color: var(--primary-color);
+    animation: smoothTickerScroll 25s linear infinite;
+}
+
+/* Pause scroll animation on user mouse hover for clear readability */
+.modern-ticker-wrapper:hover .modern-ticker-content {
+    animation-play-state: paused;
+}
+
+@keyframes smoothTickerScroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+#about-head div {
+    padding-left: 40px;
+}
+
+#about-app {
+    text-align: center;
+    padding-top: 40px;
+}
+
+#about-app .video {
+    width: 70%;
+    height: auto;
+    margin: 30px auto 0 auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+#about-app .video video {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    transition: border-color var(--transition-smooth);
+}
+
+
+
+/*contact page*/
+#page-header.contact-header {
+    background-image: url('img/city.jpg');
+}
+
+#contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#contact-details .details {
+    width: 40%;
+}
+
+#contact-details .details span,
+#form-details form span {
+    font-size: 12px;
+}
+
+#contact-details .details h2,
+#form-details form h2{
+    font-size: 26px;
+    line-height: 35px;
+    padding: 20px 0;
+}
+
+#contact-details .details h3 {
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+
+#contact-details .details li {
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+}
+
+#contact-details .details li i {
+    font-size: 14px;
+    padding-right: 22px;
+}
+
+#contact-details .details li p{
+    margin: 0;
+    font-size: 14px;
+}
+
+#contact-details .map{
+    width: 55%;
+    height: 400px;
+}
+
+#contact-details .map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+#form-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 80px;
+    border: 1px solid #e1e1e1;
+}
+
+#form-details form {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#form-details form input,
+#form-details form textarea {
+    width: 100%;
+    padding: 10px 13px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+}
+
+#form-details form button{
+    background-color: #088178;
+    color: #fff;
+}
+
+#form-details .people div{
+    padding-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+}
+
+#form-details .people div img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+#form-details .people div p{
+    margin: 0;
+    font-size: 13px;
+    line-height: 25px;
+}
+
+#form-details .people div p span{
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+/*cart page*/
+#cart table thead td,
+#cart table thead th {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 18px 0;
+}
+
+#cart {
+    overflow-x: auto;
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#cart table img{
+    width: 70px;
+}
+
+#cart table td:nth-child(1) {
+    width: 50px;
+    text-align: center;
+}
+
+#cart table td:nth-child(2) {
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(3) {
+    width: 300px;
+    text-align: left;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6) {
+    width: 50px;
+    text-align: center;
+}
+
+#cart table td:nth-child(5) input{
+    width: 70px;
+    padding: 10px 5px 10px 5px;
+}
+
+#cart table thead {
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right: none;
+}
+
+#cart table thead td {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 18px 0; 
+}
+
+#cart table tbody tr td {
+    padding-top: 15px;
+}
+
+#cart-add {
+    display: flex;
+    justify-content: space-between;
+}
+
+#coupon{
+    width: 50%;
+    margin-bottom: 30px;
+} 
+
+#coupon .coupon-form-group {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#coupon .coupon-form-group input {
+    width: 60%;
+    margin-right: 10px;
+    height: 44px;
+}
+
+#coupon h3,
+#subtotal h3 {
+    padding-bottom: 15px;
+}
+
+#coupon button,
+#subtotal button {
+    background-color: var(--primary-translucent) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+    border-radius: var(--border-radius-modern);
+    transition: all var(--transition-smooth);
+}
+
+#coupon button:hover,
+#subtotal button:hover {
+    background-color: var(--primary-color) !important;
+    color: var(--background-color) !important;
+}
+
+#subtotal{
+    width: 50%;
+    margin-bottom: 30px;
+    border: 1px solid #e2e9e1;
+    padding: 30px;
+}
+
+#subtotal table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#subtotal table td{
+    width: 50%;
+    border: 1px solid #e2e9e1;
+    padding: 10px;
+    font-size: 13px;
+}
+
+
+
+
+/*media query section for ipad size*/
+@media (max-width:768px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #e3e6f3;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    /*responds by opening the navbar by command from js.*/
+    #navbar.active {
+        right: 0px !important;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        color: rgb(184, 77, 6);
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    #close {
+        display: initial; /*this displays the close button after correcting on the full site during media query*/
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        font-size: 24px;
+    }
+
+    /* for cart removal*/
+    #lg-bag {
+        display: none;
+    }
+
+    #hero {
+        height: 70vh;
+        padding: 0 80px;
+        background-position: top 30% right 30%;
+    }
+
+    #feature {
+        justify-content: center;
+    }
+
+    #feature .fe-box {
+        margin: 15px 15px;
+    }
+
+    #product1 .pro-container { 
+        justify-content: center;
+    }
+
+    #product1 .pro {
+        margin: 15px;
+    }
+
+    #banner {
+        height: 50vh;
+    }
+
+    #banner h2 {
+        font-size: 40px;
+        padding-bottom: 0;
+        color: #1d7a06;
+    }
+
+    #banner h4 {
+        font-size: 30px;
+        color: #1d7a06;
+        padding-top: 0;
+        margin-bottom: 10px;
+    }
+
+    #banner h4 span {
+        color: red;
+    }
+
+    #banner button {
+        font-size: 1rem;
+    }
+
+    #sm-banner .banner-box {
+        min-width: 100%;
+        height: 40vh;
+        padding: 30px;
+    }
+
+    #banner3 {
+        padding: 0 40px;
+    }
+
+    #banner3 .banner-box {
+        width: 32%;
+    }
+
+    #banner3 h2 {
+        text-align: center;
+    }
+
+    #banner3 h3 {
+        text-align: center;
+    }
+
+    #newsletter .form {
+        width: 70%;
+    } 
+    
+    #page-header.about-header {
+        height: 40vh;
+    }
+
+
+    #newsletter {
+        align-items: start;
+        padding-left: 70px;
+    }
+
+    #newsletter .form {
+        width: 100%;
+        /* Form stretches to full width below the text */
+        margin-top: 20px;
+        /* Separates the text from the form */
+    }
+
+    /* contact page*/
+    #page-header.contact-header {
+        height: 40vh;
+    }
+
+    #contact-details .details h2,
+    #form-details form h2 {
+        font-size: 18px;
+    }
+
+    #form-details {
+        margin: 20px;
+        padding: 40px;
+        
+    }
+
+    #form-details form {
+        width: 60%;
+        margin-right: 40px;
+    }
+}
+
+/*media query section for mobile phone size*/
+
+@media (max-width: 475px) {
+    button.normal {
+        font-size: 10px;
+        padding: 10px 20px;
+    }
+    .section-p1 {
+        padding: 20px;
+    }
+
+    #header {
+        padding: 10px 30px;
+    }
+
+    #hero {
+        padding: 0 20px;
+        background-position: 55%;
+    }
+
+    #page-header {
+        height: 40vh;
+        padding: 0 20px;
+        background-position: 55%;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    #feature .fe-box {
+        width: 155px;
+        margin:0 0 15px 0;
+    }
+
+    #feature {
+        justify-content: space-between;
+    }
+
+    #product1 .pro {
+        width: 100%;
+    }
+
+    #discover1 {
+        font-size: 30px;
+        padding: 0;
+        margin: 2px 1px;
+    }
+
+    #banner h2 {
+        font-size: 25px;
+        padding: 5px 2px;
+        color: #1d7a06;
+    }
+
+    #banner h4 {
+        font-size: 20px;
+    }
+
+    #banner button {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    #sm-banner .banner-box {
+        min-width: 100%;
+        height: 40vh;
+    }
+
+    #sm-banner .banner-box2 {
+        margin-top: 20px;
+    }
+
+    #banner3 {
+        padding: 0 20px;
+    }
+
+    #banner3 .banner-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .section-p1 {
+        padding: 20px;
+        margin-top: 0;
+    }
+
+    #newsletter {
+        padding: 40px 20px;
+    }
+
+    #newsletter h4 {
+        font-size: 20px;
+    }
+
+    #newsletter p {
+        font-size: 13px;
+    }
+
+    #newsletter .form {
+        width: 100%;
+    }
+
+    /*shopproduct*/
+    #prodetails {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #prodetails .single-pro-image {
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    #prodetails .single-pro-details {
+        width: 100%;
+    }
+
+    /* blog*/
+
+    #blog {
+        padding: 100px 20px 0 20px;
+    }
+
+    #blog .blog-img {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 30px;
+    }
+
+    #blog .blog-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #blog .blog-details {
+        width: 100%;
+    }
+    
+    /* about page*/
+    #about-head {
+        flex-direction: column;
+    }
+
+    #about-head img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #about-head div {
+        padding: 0px;
+    }
+
+    #about-app .video {
+        width: 100%;
+    }
+
+    /*contact page*/
+    #page-header.contact-header {
+        height: 30vh;
+    }
+
+    #contact-details {
+        flex-direction: column;
+    }
+
+    #contact-details .details {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+
+    #contact-details .map {
+        width: 100%;
+        height: 400px;
+    }
+
+    #form-details {
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    #form-details form {
+        margin-bottom: 20px;
+        width: 100%;
+        padding-left: 10px;
+    }
+
+    /*cart*/
+    #cart-add {
+        flex-direction: column;
+    }
+
+    #coupon {
+        width: 100%;
+    }
+
+    #subtotal {
+        width: 100%;
+        padding: 20px;
+    }
+}

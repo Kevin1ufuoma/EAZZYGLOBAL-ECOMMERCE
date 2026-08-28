@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EazzyGlobal</title>
+    <link rel="stylesheet" href="http://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <!--css link-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.jpg" width="90px" height="70px" class="logo" alt="Cara Brand Logo"></a>
+    
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+    
+                <li><a id="lg-bag" href="cart.html"><i class="fas fa-shopping-basket"></i></a></li>
+    
+                <li>
+                    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 18px;"
+                        title="Toggle Dark/Light Mode">
+                        <i id="theme-icon" class="fas fa-moon"></i>
+                    </button>
+                </li>
+    
+                <li class="mobile-only-item">
+                    <a href="#" id="close" aria-label="Close navigation menu"><i class="fas fa-times"></i></a>
+                </li>
+            </ul>
+        </div>
+    
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-shopping-basket"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="img/menclothes/1.jpg" width="100%" id="MainImg" alt="Brand Red Vest Shirt Primary View">
+
+            <div class="small-img-group">
+               <div class="small-img-col">
+                    <img src="img/menclothes/1.jpg" width="100%" class="small-img" alt="Red Vest Color Option">
+                </div>
+                <div class="small-img-col">
+                    <img src="img/menclothes/14.jpg" width="100%" class="small-img" alt="Indigo Long Sleeve Color Option">
+                </div>
+                <div class="small-img-col">
+                    <img src="img/menclothes/2.jpg" width="100%" class="small-img" alt="Ash Long Sleeve Color Option">
+                </div>
+                <div class="small-img-col">
+                    <img src="img/menclothes/7.jpg" width="100%" class="small-img" alt="Alternate Design Option">
+                </div>
+            </div>
+        </div>
+        <div class="single-pro-details">
+            <h6>Home / Men's Apparel</h6>
+            <h4>Brand Red Vest Shirt</h4>
+            <h2>₦6,000</h2>
+            
+            <select id="sel-prodetails-size" aria-label="Select Product Size Option">
+                <option value="">Select Size</option>
+                <option value="Small">Small</option>
+                <option value="Large">Large</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+            <input type="number" id="txt-prodetails-qty" value="1" min="1" aria-label="Product Quantity Counter Input">
+            <button type="button" class="normal add-to-cart-btn" id="btn-add-to-cart-prodetails" data-id="p001" data-name="Brand Red Vest Shirt" data-price="6000" data-image="img/menclothes/1.jpg" title="Add this item to your checkout basket bag">
+                <i class="fas fa-shopping-cart"></i> Add To Cart
+            </button>
+            
+            <h4>Product Details</h4>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam maiores dignissimos, corporis eius laudantium alias mollitia quibusdam, accusamus hic dolor quasi odit, modi temporibus adipisci saepe praesentium labore voluptas facilis esse perspiciatis et eos? Maxime libero eaque facilis animi blanditiis? Praesentium animi dicta porro error quam. Soluta quae labore magni quidem ad odit consequatur illum maiores ipsa non magnam omnis placeat, modi delectus enim, perferendis dolores esse nesciunt deserunt assumenda?</span>
+        </div>
+    </section>
+
+
+    <section id="product1" class="section-p1">
+        <h2>Feature Products</h2>
+        <p>Trendy Classic Fashion</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="img/women/2.jpg" alt="">
+                <div class="des">
+                    <span>kulture</span>
+                    <h5>Ash Top-Bottom Casual Coat</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₦6,000</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/women/5.jpg" alt="">
+                <div class="des">
+                    <span>Fendi</span>
+                    <h5>Flower Body Hug Design</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₦6,000</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/menclothes/9.jpg" alt="">
+                <div class="des">
+                    <span>pleasure</span>
+                    <h5>Ash long Sleeve T Shirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₦6,000</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/menclothes/10.jpg" alt="">
+                <div class="des">
+                    <span>kulture</span>
+                    <h5>Camo Inner white Shirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₦6,000</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Our Newsletter</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offer.</span></p>
+    
+            <div id="newsletter-response" style="font-size: 13px; font-weight: 600; margin-top: 8px; display: none;"></div>
+        </div>
+    
+        <form id="frm-newsletter-intake" class="form" action="/api/newsletter/subscribe" method="POST"
+            onsubmit="return false;">
+            <input type="email" id="txt-newsletter-email" placeholder="Your email address" required
+                aria-label="Email address for subscription">
+            <button id="btn-newsletter-submit" class="normal" type="submit">Sign Up</button>
+        </form>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.jpg" height="80px" width="100px" alt="Cara Branding Footer Logo">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, fuga., Lagos
+            </p>
+            <p><strong>Phone: </strong>Lorem ipsum dolor sit amet.</p>
+            <p><strong>Hours: </strong>08:00 - 18:00, Mon - Sat</p>
+    
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit Facebook profile"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit Instagram profile"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit Twitter profile"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit Youtube channel"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">T&C</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+    
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <a href="https://play.google.com" target="_blank" rel="noopener"><img src="img/store1.png" height="80px"
+                        width="150px" alt="Download on Google Play Store"></a>
+                <a href="https://apps.apple.com" target="_blank" rel="noopener"><img src="img/store2.png" height="80px"
+                        width="150px" alt="Download on Apple App Store"></a>
+            </div>
+            <p>Secured payment Gateways</p>
+            <img src="img/pay.png" height="70px" width="150px" alt="Supported Payment Options">
+        </div>
+    
+        <div class="copyright">
+            <p>ⓒ <span id="copyright-year">2026</span>, EazzyGlobal - E Commerce Site</p>
+        </div>
+    </footer>
+
+    
+    <script>
+        var MainImg = document.getElementById("MainImg"); // here you call the main image by its id and assign to a variable
+        var smallimg = document.getElementsByClassName("small-img"); // same action above, but for the small images
+
+        // index in js begins from 0
+        smallimg[0].onclick = function(){
+            MainImg.src = smallimg[0].src; // here, when the small image is clicked, a function is carried out, which converts the main image to the small image clicked
+        }
+        smallimg[1].onclick = function (){
+            MainImg.src = smallimg[1].src; // here, when the small image is clicked, a function is carried out, which converts the main image to the small image clicked
+        }
+        smallimg[2].onclick = function (){
+            MainImg.src = smallimg[2].src; // here, when the small image is clicked, a function is carried out, which converts the main image to the small image clicked
+        }
+        smallimg[3].onclick = function (){
+            MainImg.src = smallimg[3].src; // here, when the small image is clicked, a function is carried out, which converts the main image to the small image clicked
+        }
+    </script>
+
+    <script src="https://jquery.com"></script>
+    <script src="script.js"></script>
+</body>
+
+
+</html>
