@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EazzyGlobal</title>
+    <link rel="stylesheet" href="http://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--css link-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.jpg" width="90px" height="70px" class="logo" alt="Cara Brand Logo"></a>
+    
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+    
+                <!-- Cart Link (Updated link location to match CSS targets) -->
+                <li><a id="lg-bag" class="active" href="cart.html"><i class="fas fa-shopping-basket"></i></a></li>
+    
+                <!-- Theme Toggle Button -->
+                <li>
+                    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 18px;"
+                        title="Toggle Dark/Light Mode">
+                        <i id="theme-icon" class="fas fa-moon"></i>
+                    </button>
+                </li>
+    
+                <!-- Mobile Close Button Wrapper (Now enclosed safely inside an li tag) -->
+                <li class="mobile-only-item">
+                    <a href="#" id="close" aria-label="Close navigation menu"><i class="fas fa-times"></i></a>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Mobile Screen Top Interaction Layer -->
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-shopping-basket"></i></a>
+            <!-- Pure HTML text burger icon - 100% reliable on GitHub live servers -->
+            <button type="button" id="bar"
+                style="background: none; border: none; color: #088178; font-size: 24px; cursor: pointer; margin-left: 15px; padding: 0;">
+                ☰
+            </button>
+        </div>
+    </section>
+
+    
+    <section id="hero">
+        <div  class="container">
+            <h2>We Hope You Are Pleased</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+        </div>
+    </section>
+
+
+    <section id="cart" class="section-p1">
+        <div id="cart-empty-message" style="text-align: center; padding: 40px; display: block;">
+            <h2 style="font-size: 24px; margin-bottom: 10px;">Your Shopping Cart is Empty</h2>
+            <p style="margin-bottom: 20px;">Browse our collections to add trendy luxury fashion items to your bag.</p>
+            <a href="shop.html"><button type="button" class="normal">Go to Shop</button></a>
+        </div>
+        
+        <!-- Active Inventory Table Grid (Hidden on startup, built dynamically by script) -->
+        <table id="cart-table" width="100%" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Remove</th>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Sub-total</th>
+                </tr>
+            </thead>
+            <tbody id="cart-table-body">
+                <!-- Row items will inject here dynamically via script -->
+            </tbody>
+        </table>
+    </section>
+
+    
+    <section id="cart-add" class="section-p1">
+        <div id="coupon">
+            <h3>Apply Coupon</h3>
+            <div class="coupon-form-group">
+                <input type="text" id="txt-coupon-code" placeholder="Enter Your Coupon"
+                    aria-label="Coupon discount track box">
+                <button class="normal" type="button" id="btn-apply-coupon">Apply</button>
+            </div>
+            <div id="coupon-feedback" style="font-size: 13px; font-weight: 600; margin-top: 6px; display: none;"></div>
+        </div>
+
+        <div id="subtotal">
+            <h3>Cart Total</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Cart Subtotal</td>
+                        <td id="cart-total-sub">₦18,000</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td id="cart-shipping-fee" style="color: var(--primary-color); font-weight: 600;">Free</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong id="cart-total-grand">₦18,000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btn-checkout-trigger" class="normal" type="button">Proceed To Checkout</button>
+        </div>
+    </section>
+
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.jpg" height="80px" width="100px" alt="Cara Branding Footer Logo">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, fuga., Lagos
+            </p>
+            <p><strong>Phone: </strong>Lorem ipsum dolor sit amet.</p>
+            <p><strong>Hours: </strong>08:00 - 18:00, Mon - Sat</p>
+    
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit Facebook profile"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit Instagram profile"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit Twitter profile"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit Youtube channel"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">T&C</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <!-- Synchronized directly to your e-commerce cart file path -->
+            <a href="cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+    
+        <!-- COL 4: DISPATCH SOFTWARE INSTALL CHANNELS -->
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <a href="https://play.google.com" target="_blank" rel="noopener"><img src="img/store1.png" height="80px"
+                        width="150px" alt="Download on Google Play Store"></a>
+                <a href="https://apps.apple.com" target="_blank" rel="noopener"><img src="img/store2.png" height="80px"
+                        width="150px" alt="Download on Apple App Store"></a>
+            </div>
+            <p>Secured payment Gateways</p>
+            <img src="img/pay.png" height="70px" width="150px" alt="Supported Payment Options">
+        </div>
+    
+        <div class="copyright">
+            <!-- Wrapped inside an ID wrapper node to hook programmatic date updates via script tools later -->
+            <p>ⓒ <span id="copyright-year">2026</span>, EazzyGlobal - E Commerce Site</p>
+        </div>
+    </footer>
+
+    <script src="https://jquery.com"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
